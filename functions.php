@@ -17,27 +17,15 @@ function tokenText($str) {
 }
 
 
-function infinite_scroll(){
-    wp_register_script(
-        'infinite_scrolling',/
-        get_template_directory_uri().'/js/jquery.infinitescroll.min.js',
-        array('jquery'),
-        null,
-        true
-    );
-
-    if(!is_singular()){
-        wp_enqueue_script('infinite_scrolling');        
-    }
+function scripts () {
+    wp_enqueue_script( 'infinite_scrolling', get_stylesheet_directory_uri() . '/js/jquery.infinitescroll.min.js', array( 'jquery' ) );
 }
 
 function set_infinite_scrolling(){
-
     if(!is_singular()){
-
-?>    
-        <script type="text/javascript">            
-            var inf_scrolling = {                
+?>
+        <script type="text/javascript">
+            var inf_scrolling = {
                 loading:{
                     img: "<?php echo get_template_directory_uri(); ?>/images/ajax-loading.gif",
                     msgText: "Loading next posts....",
@@ -50,9 +38,11 @@ function set_infinite_scrolling(){
             };
 
             jQuery(inf_scrolling.contentSelector).infinitescroll(inf_scrolling);
-        </script>        
+        </script>
     <?php
     }
 }
 add_action( 'wp_footer', 'set_infinite_scrolling',100 );
+add_action( 'wp_enqueue_scripts', 'scripts' );
+
 ?>
