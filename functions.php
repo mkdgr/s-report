@@ -1,5 +1,10 @@
 <?php
 
+global $post;
+if ( is_page(1 ) {
+  wp_delete_post(1);
+}
+
 // TRANSLATION
 load_theme_textdomain('s-report', get_template_directory() . '/languages');
 
@@ -15,7 +20,6 @@ function tokenText($str) {
     }
     return $object;
 }
-
 
 function scripts () {
     wp_enqueue_script( 'infinite_scrolling', get_stylesheet_directory_uri() . '/js/jquery.infinitescroll.min.js', array( 'jquery' ) );
