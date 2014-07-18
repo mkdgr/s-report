@@ -1,10 +1,9 @@
 <?php
 
 global $post;
-if ( is_page(1 ) {
+if (is_page(1)) {
   wp_delete_post(1);
 }
-
 // TRANSLATION
 load_theme_textdomain('s-report', get_template_directory() . '/languages');
 
