@@ -1,10 +1,17 @@
 <?php
 
-global $post;
-if (is_page(1)) {
-  wp_delete_post(1);
+// Auto delete first "Hello Word" post
+$autodeletefirst = $wpdb->get_results( 
+  "
+  SELECT *
+  FROM $wpdb->posts
+  WHERE ID = 1
+  "
+);
+if($autodeletefirst[0]->post_status == "publish") {
+wp_delete_post(1, false);
 }
-// TRANSLATION
+
 load_theme_textdomain('s-report', get_template_directory() . '/languages');
 
 function tokenText($str) {
