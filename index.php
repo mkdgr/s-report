@@ -2,7 +2,6 @@
 <div class="Page">
     <div class="Events">
 
-
         <?php
 
         $DomainOption = array(
@@ -83,7 +82,7 @@
             include "event/instagram.php";
             include "event/facebook.php";
             include "event/foursquare.php";
-            include "event/twitter.php";
+            include "event/twitter.php"; 
             include "event/soundcloud.php";
             include "event/vimeo.php";
             include "event/tumblr.php";
@@ -93,14 +92,15 @@
             include "event/instapaper.php";
             include "event/etsy.php";
             include "event/github.php";
-            include "event/iphone.php";
+            include "event/iphone.php"; 
             include "event/calendar.php";
 
         endwhile; ?>
 
-            <?php next_posts_link( __('Older posts', 's-report') ); ?>
-            <?php previous_posts_link( __('Newer posts', 's-report') ); ?>
-
+        <div class="nav">
+                    <?php next_posts_link( __('Older posts', 's-report') ); ?>
+                    <?php previous_posts_link( __('Newer posts', 's-report') ); ?>
+        </div>
         <?php
         endif;
 
