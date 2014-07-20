@@ -62,7 +62,7 @@ function set_infinite_scrolling()
                 "contentSelector": ".Events"
             };
 
-            jQuery(inf_scrolling.contentSelector).infinitescroll(inf_scrolling);
+            jQuery(inf_scrolling.contentSelector).infinitescroll(inf_scrolling,function(){twttr.widgets.load()});
         </script>
     <?php
     }
