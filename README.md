@@ -22,6 +22,4 @@ Now we're all set and let's start filling up the timeline. Make some activities 
 Each recipe works with different periods. It's usually between 3-8 minutes but you can manually trigger each recipe if you don't want to wait.
 
 ###Notes
-Don't forget to delete the ‘Hello World’ post after the installation of WordPress.
-
 Posts can only be sent by [ifttt](http://ifttt.com/), you shouldn't manually post anything.
